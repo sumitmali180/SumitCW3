@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../styles/Navbar.css";
+import "../styles/LoginResister.css";
 //import googleImage from "../assets/google.png";
 
-export const Navbar = () => {
+export const LoginResister = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
