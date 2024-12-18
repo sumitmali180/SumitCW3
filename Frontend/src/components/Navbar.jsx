@@ -21,6 +21,7 @@ export const Navbar = ({ isLoggedIn, onLogout }) => {
   };
 
   return (
+    <>
     <div className="nav-container">
       <button onClick={() => handleNavigation("/")}>Home</button>
       <button onClick={() => handleNavigation("/feed")}>
@@ -32,5 +33,7 @@ export const Navbar = ({ isLoggedIn, onLogout }) => {
         {isLoggedIn ? "Logout" : "Login/Register"}
       </button>
     </div>
+    
+    </>
   );
 };

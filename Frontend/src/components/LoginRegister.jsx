@@ -10,7 +10,7 @@ export const LoginRegister = ({ onLogin }) => {
     password: "",
   });
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);  // Track loading state
   const navigate = useNavigate(); // Hook for navigation
 
   const toggleForm = () => {
@@ -27,9 +27,9 @@ export const LoginRegister = ({ onLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (loading) return;
-    setLoading(true);
-    setError("");
+    if (loading) return;  // Prevent multiple submissions
+    setLoading(true);  // Start loading
+    setError("");  // Clear any previous errors
 
     const firebaseUrl = "https://grid-space-default-rtdb.asia-southeast1.firebasedatabase.app";
 
@@ -103,14 +103,19 @@ export const LoginRegister = ({ onLogin }) => {
         }
 
         // Successfully logged in, update the login status
-        alert("Login successful!");
+        //alert("Login successful!");
         onLogin(true);  // Call the onLogin prop to update the login state in App component
-        navigate("/feed");  // Redirect to feed page using useNavigate
+
+        // Simulate a small delay to show loader before navigation
+        setTimeout(() => {
+          navigate("/feed");  // Redirect to feed page using useNavigate
+        }, 500);  // Delay to show loader for 500ms (can be adjusted)
+
       }
     } catch (error) {
       setError(error.message);
     } finally {
-      setLoading(false);
+      setLoading(false);  // Stop loading
     }
   };
 
@@ -204,6 +209,14 @@ export const LoginRegister = ({ onLogin }) => {
           </div>
         </div>
       </div>
+
+      {/* Loader Spinner (Visible when loading is true) */}
+      {loading && (
+        <div className="loader">
+          <div className="spinner"></div>
+          <p>Logging in...</p>
+        </div>
+      )}
     </div>
   );
 };
