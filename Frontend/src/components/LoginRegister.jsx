@@ -208,7 +208,7 @@ export const LoginRegister = ({ onLogin }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div>  
 
       {/* Loader Spinner (Visible when loading is true) */}
       {loading && (
