@@ -1,0 +1,68 @@
+/* Container for the navigation bar */
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; /* Distributes items evenly */
+    align-items: center; /* Vertically aligns items */
+    padding: 20px;
+    border: 1px solid #333; /* Darker border for better contrast */
+    background-image: linear-gradient(to right, rgb(219, 91, 16), rgb(236, 124, 33));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: sticky; /* Keeps nav fixed at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Style for the buttons */
+.nav-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    width: auto;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #fff; /* White background for buttons */
+    color: #ee6104; /* Matching the gradient's dark blue */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+.nav-container-hidden button {
+    padding-top: 10px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    background-color: #ee6104; /* White background for buttons */
+    color: #fff; /* Matching the gradient's dark blue */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for buttons */
+.nav-container button:hover {
+    background-color: #ee6104; /* Dark blue background on hover */
+    color: #fff; /* White text on hover */
+    transform: scale(1.09); /* Slight scale for emphasis */
+    box-shadow: 0 2px 8px rgba(236, 6, 6, 0.15); /* Subtle shadow on hover */
+}
+
+/* Active state for buttons (when clicked) */
+.nav-container button:active {
+    transform: scale(0.98); /* Slightly shrink the button on click */
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        padding: 15px;
+    }
+
+    .nav-container button {
+        margin: 10px 0; /* Vertical margin between buttons */
+        width: 80%; /* Make buttons wider on small screens */
+    }
+}

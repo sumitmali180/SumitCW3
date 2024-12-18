@@ -1,3 +1,11 @@
-body{
-  color: #ff0000;
+/* Reset margin and padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the navbar is aligned to the top */
+.navbar {
+    margin-top: 0;  /* Ensure no margin is applied */
 }
